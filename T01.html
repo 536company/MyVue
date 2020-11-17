@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      background-image: url("giao.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    #app{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 500px;
+      height: 500px;
+      background-color: greenyellow;
+      margin: 0 auto;
+      margin-top: 150px;
+    }
+    .b1{
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <button class="b1" @click="pr" @mouseenter="bianhuan1">{{i1}}</button>
+  <button class="b1" @click="pr" @mouseenter="bianhuan2">{{i2}}</button>
+</div>
+
+<script src="../Vue/vue.js"></script>
+<script>
+  const app = new Vue({
+    el:"#app",
+    data:{
+      i1 : "是",
+      i2 : "不是"
+    },
+    methods:{
+      pr(){
+        alert("没错，你就是傻逼")
+      },
+      bianhuan1(){
+        if(this.i1 !== "是"){
+          let i;
+          i = this.i1;
+          this.i1 = this.i2;
+          this.i2 = i;
+        }
+      },
+      bianhuan2(){
+        if (this.i2 !== "是"){
+          let i;
+          i = this.i1;
+          this.i1 = this.i2;
+          this.i2 = i;
+        }
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
